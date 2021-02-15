@@ -1,11 +1,14 @@
+#Collect method done with yield
+
 def my_collect(collection)
   i = 0
+  new_array = []
   if block_given?
    while i < collection.length
-      yield(collection[i])
+     new_array << yield(collection[i])
       i = i + 1
     end
     
-    return collection
+    return new_array
   end
 end
